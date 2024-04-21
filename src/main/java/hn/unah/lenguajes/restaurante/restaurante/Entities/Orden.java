@@ -25,6 +25,6 @@ public class Orden {
    private Comida comida;
 
    @ManyToOne
-   @Column(name = "idfactura")
+   @JoinColumn(name = "idfactura")
    private Factura factura;
 }
