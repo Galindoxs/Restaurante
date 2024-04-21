@@ -35,7 +35,7 @@ public class Comida {
     @OneToOne(mappedBy = "comida")
     private Orden orden;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "comida_ingrediente", joinColumns = @JoinColumn(name = "idcomida"),
     inverseJoinColumns = @JoinColumn(name = "idingrediente"))
     private List<Ingrediente> ingrediente;

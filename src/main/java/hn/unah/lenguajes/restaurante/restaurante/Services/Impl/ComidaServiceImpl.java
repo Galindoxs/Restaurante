@@ -1,5 +1,7 @@
 package hn.unah.lenguajes.restaurante.restaurante.Services.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +18,7 @@ public class ComidaServiceImpl implements ComidaService{
     private ComidaRepository comidaRepository;
 
     @Autowired
-    private IngredienteRepository inventarioRepository;
+    private IngredienteRepository ingredienteRepository;
 
     @Override
     public Comida crearComida(Comida comida) {
@@ -35,14 +37,10 @@ public class ComidaServiceImpl implements ComidaService{
     }
 
     @Override
-    public Ingrediente asignarAInventario(long idproducto, long idComida) {
-        if(comidaRepository.existsById(idComida) && inventarioRepository.existsById(idproducto)){
-
-            //Averiguar A quien va qué
-            return null;
-        }        
-        
-        return null;
+    public List<Comida> mostrarComida() {
+       return (List<Comida>) comidaRepository.findAll();
     }
+
+   
     
 }

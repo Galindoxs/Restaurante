@@ -20,8 +20,8 @@ public class LoginController {
     private ClienteServiceImpl clienteServiceImpl;
     
     @GetMapping("/login")
-    public Cliente buscarClientePoUsuario(@RequestParam String nombreusuario, @RequestParam String contraseniausuario) {
-        return clienteServiceImpl.buscarClientePoUsuario(nombreusuario, contraseniausuario);
+    public Cliente buscarClientePorUsuario(@RequestParam String nombreusuario, @RequestParam String contraseniausuario) {
+        return clienteServiceImpl.buscarClientePorUsuario(nombreusuario, contraseniausuario);
     }
     
 }

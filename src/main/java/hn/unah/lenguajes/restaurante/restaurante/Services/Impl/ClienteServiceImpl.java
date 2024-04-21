@@ -24,7 +24,7 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    public Cliente buscarClientePoUsuario(String nombreUsuario, String contra) {
+    public Cliente buscarClientePorUsuario(String nombreUsuario, String contra) {
         if(usuarioRepository.existsById(nombreUsuario)){
             Usuario usuarioLogin = usuarioRepository.findById(nombreUsuario).get();
             if(usuarioLogin.getContraseniausuario() == contra){
