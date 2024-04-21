@@ -25,5 +25,6 @@ public class Orden {
    private Comida comida;
 
    @ManyToOne
+   @Column(name = "idfactura")
    private Factura factura;
 }

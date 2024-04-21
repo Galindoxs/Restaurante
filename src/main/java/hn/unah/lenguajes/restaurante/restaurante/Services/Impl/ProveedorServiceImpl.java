@@ -23,7 +23,7 @@ public class ProveedorServiceImpl implements ProveedorService{
     }
 
     @Override
-    public Ingrediente asignarAInventario(long idproveedor, String idproducto) {
+    public Ingrediente asignarAIngrediente(long idproveedor, String idproducto) {
         
         return null;
     }

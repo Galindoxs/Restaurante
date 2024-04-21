@@ -32,7 +32,7 @@ public class Ingrediente {
     @Column(name = "fechacaducidad")
     private LocalDate fechacaducidad;
 
-    @ManyToMany(mappedBy = "ingrediente")
+    @ManyToMany(mappedBy = "ingrediente", cascade = CascadeType.ALL)
     private List<Proveedor> proveedor;
 
     @ManyToMany(mappedBy = "ingrediente")

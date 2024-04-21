@@ -27,7 +27,6 @@ public class OrdenController {
 
     @PostMapping("/orden/crear")
     public Orden crearOrden(@RequestBody Orden orden) {
-
         return ordenServiceImpl.crearOrden(orden);
     }
 

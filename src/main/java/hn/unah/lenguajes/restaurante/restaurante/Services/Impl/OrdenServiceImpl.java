@@ -5,7 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import hn.unah.lenguajes.restaurante.restaurante.Entities.Comida;
+import hn.unah.lenguajes.restaurante.restaurante.Entities.Ingrediente;
 import hn.unah.lenguajes.restaurante.restaurante.Entities.Orden;
+import hn.unah.lenguajes.restaurante.restaurante.Repositories.IngredienteRepository;
 import hn.unah.lenguajes.restaurante.restaurante.Repositories.OrdenRepository;
 import hn.unah.lenguajes.restaurante.restaurante.Services.OrdenService;
 
@@ -15,8 +18,21 @@ public class OrdenServiceImpl implements OrdenService{
     @Autowired
     private OrdenRepository ordenRepository;
 
+    @Autowired
+    private IngredienteRepository ingredienteRepository;
+
     @Override
     public Orden crearOrden(Orden orden) {
+        
+        Comida comida = orden.getComida();
+        List<Ingrediente> ingredientes = comida.getIngrediente();
+
+        for (Ingrediente ingrediente : ingredientes) {
+           Ingrediente ingredienteMod = ingredienteRepository.findById(ingrediente.getIdingrediente()).get();
+           ingredienteMod.setCantidad(ingredienteMod.getCantidad()-ingrediente.getCantidad());
+            ingredienteRepository.save(ingredienteMod);
+        }
+
         return ordenRepository.save(orden); 
     }
 

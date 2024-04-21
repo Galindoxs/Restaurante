@@ -7,5 +7,5 @@ public interface ProveedorService {
     
     public Proveedor crearProveedor(Proveedor proveedor);
 
-    public Ingrediente asignarAInventario(long idproveedor, String idproducto);
+    public Ingrediente asignarAIngrediente(long idproveedor, String idproducto);
 }
