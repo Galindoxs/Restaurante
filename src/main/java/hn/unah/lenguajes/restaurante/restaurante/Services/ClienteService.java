@@ -6,6 +6,6 @@ public interface ClienteService {
     
     public Cliente crearCliente(Cliente cliente);
 
-    public Cliente buscarClientePorCorreo(String correo);
+    public Cliente buscarClientePoUsuario(String correo, String contra);
     
 }

@@ -25,7 +25,7 @@ public class Cliente {
     private String nombrecliente;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idusuario")
+    @JoinColumn(name = "nombreusuario")
     private Usuario usuario;
     
     @OneToOne(mappedBy = "cliente")

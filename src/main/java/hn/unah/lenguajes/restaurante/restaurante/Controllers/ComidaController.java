@@ -22,10 +22,10 @@ public class ComidaController {
     @Autowired
     private ComidaServiceImpl comidaServiceImpl;
 
-    @PostMapping("/comida/crear")
-    public Comida crearComida(@RequestBody Comida comida) {        
-        return comidaServiceImpl.crearComida(comida);
-    }
+    // @PostMapping("/comida/crear")
+    // public Comida crearComida(@RequestBody Comida comida) {        
+    //     return comidaServiceImpl.crearComida(comida);
+    // }
     
     @GetMapping("/comida/buscar")
     public Comida buscarComida(@RequestParam long idComida) {
