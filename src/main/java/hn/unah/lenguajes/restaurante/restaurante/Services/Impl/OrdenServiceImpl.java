@@ -21,6 +21,9 @@ public class OrdenServiceImpl implements OrdenService{
     @Autowired
     private IngredienteRepository ingredienteRepository;
 
+    @Autowired
+    private IngredienteServiceImpl ingredienteServiceImpl;
+
     @Override
     public Orden crearOrden(Orden orden) {
         
@@ -31,6 +34,7 @@ public class OrdenServiceImpl implements OrdenService{
            Ingrediente ingredienteMod = ingredienteRepository.findById(ingrediente.getIdingrediente()).get();
            ingredienteMod.setCantidad(ingredienteMod.getCantidad()-ingrediente.getCantidad());
             ingredienteRepository.save(ingredienteMod);
+            ingredienteServiceImpl.revisarCantidadIngredientes(ingredienteMod); //Revisar la cantidad de ingredientes
         }
 
         return ordenRepository.save(orden); 

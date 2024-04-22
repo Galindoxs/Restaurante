@@ -8,5 +8,7 @@ public interface IngredienteService {
 
     public Ingrediente buscarInventario(long idProducto);
 
+    public void revisarCantidadIngredientes(Ingrediente ingrediente);
+
     
 }

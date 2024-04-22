@@ -22,5 +22,17 @@ public class IngredienteServiceImpl implements IngredienteService{
     public Ingrediente buscarInventario(long idProducto) {
        return ingredienteRepository.findById(idProducto).get();
     }
+
+   @Override
+   public void revisarCantidadIngredientes(Ingrediente ingrediente) {
+
+      if(ingredienteRepository.existsById(ingrediente.getIdingrediente())){
+         Ingrediente ingredienteMod = ingredienteRepository.findById(ingrediente.getIdingrediente()).get();
+         if(ingredienteMod.getCantidad()<=10){
+            ingredienteMod.setCantidad(20);
+            ingredienteRepository.save(ingredienteMod);
+         }
+      }
+   }
     
 }
