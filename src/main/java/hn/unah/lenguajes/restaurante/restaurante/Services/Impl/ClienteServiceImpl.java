@@ -20,6 +20,12 @@ public class ClienteServiceImpl implements ClienteService{
 
     @Override
     public Cliente crearCliente(Cliente cliente) {
+        Usuario usuario = new Usuario();
+        usuario.setNombreusuario(cliente.getUsuario().getNombreusuario());
+        usuario.setContraseniausuario(cliente.getUsuario().getContraseniausuario());
+
+        cliente.setUsuario(usuarioRepository.save(usuario));
+
         return clienteRepository.save(cliente);    
     }
 
